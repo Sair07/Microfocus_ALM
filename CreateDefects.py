@@ -2,17 +2,17 @@
 #import ota api for microfocus alm to use the tdconnection object
 from comtypes.client import CreateObject
 from datetime import date
-import response
+#import response
 
 #credenttials to login to alm
-url = "http://dev-testalm.cytiva.net/qcbin"
-username ="saira.banu1" #"Alm.opshubuser"
-password ="Welcome@72472_SR" #"DS%@dvk4ULc7Nt3#"
+url = "http://<host>/qcbin"
+username =""
+password =""
 #ota connection object
 #ota_connection = CreateObject("TDApiOle80.TDConnection")
 ota_connection = CreateObject("TDAPIOLE80.TDConnection")
 #project list
-project_list =['Cytiva_ELN_GXP','Cytiva_Learning_GxP','Cytiva_ServiceNow_GxP']
+project_list =['project1','project2','...']
 domain = "QUALITY"
 
 #function to login to alm
@@ -56,8 +56,10 @@ def create_defect():
         thenew_bug.field[detected_date] = date.today().strftime("%m/%d/%Y")
         thenew_bug.field[detected_Verion] = "Test"
         thenew_bug.field[environment] = "Other"
-        thenew_bug.field[detected_by] = "saira.banu1"
-        thenew_bug.field[Impact] = response.fetch_text_from_url("https://admhelp.microfocus.com/alm/en/24.1/online_help/Content/Tutorial/sa_defect_add.htm")
+        thenew_bug.field[detected_by] = "<username>"
+        thenew_bug.field[Impact] = "No impact"
+        #I used the below code as value to impact field. as I was testing the field size with 1k charater
+        #response.fetch_text_from_url("https://admhelp.microfocus.com/alm/en/24.1/online_help/Content/Tutorial/sa_defect_add.htm")
 
         thenew_bug.Post()
         i += 1
