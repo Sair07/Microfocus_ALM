@@ -6,9 +6,9 @@ from collections import defaultdict
 from openpyxl.workbook import Workbook
 
 #credenttials to login to alm
-url = "http://dev-testalm.cytiva.net/qcbin"
-username ="saira.banu1"
-password ="Welcome@72472_SR"
+url = "http://<host>/qcbin"
+username =""
+password =""
 #ota connection object
 ota_connection = CreateObject("TDAPIOLE80.TDConnection")
 ota_sa_connection = CreateObject("SAClient.SaApi.9")
@@ -97,3 +97,4 @@ if __name__ == "__main__":
         print("Not Connected to ALM")
     Connect_to_all_templateProjects()
     logout_from_alm()
+
