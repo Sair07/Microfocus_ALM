@@ -1,3 +1,9 @@
+#1. Connect to ALM, Login to project by choosing what project to login to (user input)
+#2. Waits for user prompt to enter the requirement Id. 
+#3. Script navigate to all the child requirement & reset the requirement. (status, revision, Signature etc)
+#4. The script also capture the value of the fields Pre & Post resetting the fields in an excel file. (using Pandas)
+
+
 #Revision number 0
 #Status to Design
 
